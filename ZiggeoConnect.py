@@ -18,6 +18,11 @@ class ZiggeoConnect(object):
         self.__application = application
         self.__baseuri = baseuri
 
+    # We decided to port this method from urllib -> requests because the future package backports urllib after which its behaviour changes
+    # subtly causing errors like "urlopen error unknown url type: https". After googling around the only possible alternative was to port to requests
+    # which is untouched by the future package and is easier to work with. The futurize package also suggested moving to requests here
+    # https://python-future.org/compatible_idioms.html#urllib-module
+    # Have tested this out for the core functionality that is used in Recruiterbox: a) creating authtokens and b) fetching videos
     def request(self, method, path, data = None, file = None, timeout=60):
         base64string = base64.encodestring(('%s:%s' % (self.__application.token, self.__application.private_key)).encode()).decode().replace('\n', '')
         headers = {"Authorization": "Basic %s" % base64string}

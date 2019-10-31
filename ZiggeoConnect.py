@@ -41,7 +41,7 @@ class ZiggeoConnect(object):
 
                 result = requests.request(method=method, url=self.__baseuri + path, data=body, headers=headers, timeout=timeout)
 
-        return result.json()
+        return result
 
     # def request(self, method, path, data = None, file = None, timeout=60):
     #     path = path.encode("ascii", "ignore")
@@ -85,7 +85,7 @@ class ZiggeoConnect(object):
     #         return result.read()
 
     def requestJSON(self, method, path, data = None, file = None):
-        return json.loads(self.request(method, path, data, file))
+        return self.request(method, path, data, file).json()
 
     def get(self, path, data = None, file = None):
         return self.request("GET", path, data, file)

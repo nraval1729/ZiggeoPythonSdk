@@ -1,3 +1,6 @@
+from __future__ import print_function
+from __future__ import division
+from past.utils import old_div
 import sys
 
 from Ziggeo import Ziggeo
@@ -26,7 +29,7 @@ def indexVideos(skip=0):
 		indexVideos(skip+100)
 	pass
 indexVideos(0)
-pr_portrait = (count_portrait/(count_landscape+count_portrait))*100
-pr_landscape = (count_landscape/(count_landscape+count_portrait))*100
+pr_portrait = (old_div(count_portrait,(count_landscape+count_portrait)))*100
+pr_landscape = (old_div(count_landscape,(count_landscape+count_portrait)))*100
 print("Portrait Count = {:.0f} Portrait Percentage {:.2f}%".format(count_portrait, pr_portrait))
 print("Landscape Count = {:.0f} Landscape Percentage {:.2f}%".format(count_landscape, pr_landscape))

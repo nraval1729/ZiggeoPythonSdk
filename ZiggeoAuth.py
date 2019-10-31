@@ -1,8 +1,11 @@
+from builtins import str
+from builtins import chr
+from builtins import object
 from Crypto import Random
 from Crypto.Cipher import AES
 import hashlib, os, binascii, random, sys, json, time
 
-class ZiggeoAuth:
+class ZiggeoAuth(object):
 
     def __init__(self, application):
         self.__application = application
@@ -32,7 +35,7 @@ class ZiggeoAuth:
 
     def _generateNonce(self):
         try:
-            max_int = sys.maxint
+            max_int = sys.maxsize
         except AttributeError:
             max_int = sys.maxsize
         return str(int(time.time())) + str(random.randint(0, max_int))

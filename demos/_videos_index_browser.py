@@ -1,3 +1,6 @@
+from __future__ import print_function
+from __future__ import division
+from past.utils import old_div
 import sys
 
 from Ziggeo import Ziggeo
@@ -35,4 +38,4 @@ def indexVideos(skip=0):
 indexVideos(0)
 
 for browser in browsers:
-	print("Browser {:s}: {:d} ({:.2f}%)".format(browser, browsers[browser], (browsers[browser]/total_browser)*100 ))
+	print("Browser {:s}: {:d} ({:.2f}%)".format(browser, browsers[browser], (old_div(browsers[browser],total_browser))*100 ))

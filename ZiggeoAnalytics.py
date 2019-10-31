@@ -1,4 +1,5 @@
-class ZiggeoAnalytics:
+from builtins import object
+class ZiggeoAnalytics(object):
 
     def __init__(self, application):
         self.__application = application

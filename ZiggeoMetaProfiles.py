@@ -1,4 +1,5 @@
-class ZiggeoMetaProfiles:
+from builtins import object
+class ZiggeoMetaProfiles(object):
 
     def __init__(self, application):
         self.__application = application

@@ -1,4 +1,5 @@
-class ZiggeoVideos:
+from builtins import object
+class ZiggeoVideos(object):
 
     def __init__(self, application):
         self.__application = application

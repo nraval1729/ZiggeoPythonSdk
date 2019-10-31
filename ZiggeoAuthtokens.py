@@ -1,4 +1,5 @@
-class ZiggeoAuthtokens:
+from builtins import object
+class ZiggeoAuthtokens(object):
 
     def __init__(self, application):
         self.__application = application

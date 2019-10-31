@@ -1,4 +1,5 @@
-class ZiggeoEffectProfiles:
+from builtins import object
+class ZiggeoEffectProfiles(object):
 
     def __init__(self, application):
         self.__application = application

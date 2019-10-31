@@ -1,18 +1,20 @@
-from ZiggeoConfig import ZiggeoConfig
-from ZiggeoConnect import ZiggeoConnect
-from ZiggeoAuth import ZiggeoAuth
-from ZiggeoVideos import ZiggeoVideos
-from ZiggeoStreams import ZiggeoStreams
-from ZiggeoAuthtokens import ZiggeoAuthtokens
-from ZiggeoApplication import ZiggeoApplication
-from ZiggeoEffectProfiles import ZiggeoEffectProfiles
-from ZiggeoEffectProfileProcess import ZiggeoEffectProfileProcess
-from ZiggeoMetaProfiles import ZiggeoMetaProfiles
-from ZiggeoMetaProfileProcess import ZiggeoMetaProfileProcess
-from ZiggeoWebhooks import ZiggeoWebhooks
-from ZiggeoAnalytics import ZiggeoAnalytics
+from __future__ import absolute_import
+from builtins import object
+from .ZiggeoConfig import ZiggeoConfig
+from .ZiggeoConnect import ZiggeoConnect
+from .ZiggeoAuth import ZiggeoAuth
+from .ZiggeoVideos import ZiggeoVideos
+from .ZiggeoStreams import ZiggeoStreams
+from .ZiggeoAuthtokens import ZiggeoAuthtokens
+from .ZiggeoApplication import ZiggeoApplication
+from .ZiggeoEffectProfiles import ZiggeoEffectProfiles
+from .ZiggeoEffectProfileProcess import ZiggeoEffectProfileProcess
+from .ZiggeoMetaProfiles import ZiggeoMetaProfiles
+from .ZiggeoMetaProfileProcess import ZiggeoMetaProfileProcess
+from .ZiggeoWebhooks import ZiggeoWebhooks
+from .ZiggeoAnalytics import ZiggeoAnalytics
 
-class Ziggeo:
+class Ziggeo(object):
 
     def __init__(self, token, private_key, encryption_key = None):
         self.token = token
@@ -20,12 +22,12 @@ class Ziggeo:
         self.encryption_key = encryption_key
         self.config = ZiggeoConfig()
         server_api_url = self.config.server_api_url
-        for k, v in self.config.regions.items():
+        for k, v in list(self.config.regions.items()):
             if (self.token.startswith(k)):
                 server_api_url = v
         self.connect = ZiggeoConnect(self, server_api_url)
         api_url = self.config.api_url
-        for k, v in self.config.api_regions.items():
+        for k, v in list(self.config.api_regions.items()):
             if (self.token.startswith(k)):
                 api_url = v
         self.api_connect = ZiggeoConnect(self, api_url)

@@ -1,3 +1,8 @@
+from __future__ import print_function
+from __future__ import division
+from builtins import str
+from builtins import range
+from past.utils import old_div
 import sys, time
 
 from Ziggeo import Ziggeo
@@ -22,7 +27,7 @@ for i in range(ops_time):
 	videos.append(video['token'])
 
 upload_time = time.time()-upload_time
-upload_time = upload_time/ops_time
+upload_time = old_div(upload_time,ops_time)
 
 download_time = time.time()
 for v in videos:
@@ -34,7 +39,7 @@ for v in videos:
 	ziggeo.videos().delete(v)
 
 delete_time = time.time()-delete_time
-delete_time = delete_time/ops_time
+delete_time = old_div(delete_time,ops_time)
 
 print ("Upload: "+str(upload_time))
 print ("Download: "+str(download_time))

@@ -1,3 +1,5 @@
+from builtins import str
+from builtins import object
 import codecs
 import mimetypes
 import sys
@@ -28,7 +30,7 @@ class MultiPartForm(object):
         Yield body's chunk as bytes
         """
         encoder = codecs.getencoder('utf-8')
-        for (key, value) in fields.items():
+        for (key, value) in list(fields.items()):
             key = self.u(key)
             yield encoder('--{}\r\n'.format(self.boundary))
             yield encoder(self.u('Content-Disposition: form-data; name="{}"\r\n').format(key))

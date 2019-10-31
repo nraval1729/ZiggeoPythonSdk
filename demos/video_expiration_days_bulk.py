@@ -1,10 +1,11 @@
+from __future__ import print_function
 import sys
 
 from Ziggeo import Ziggeo
 
 if(len(sys.argv) < 4):
-	print "Error\n"
-	print "Usage: $>python video_expiration_days_bulk.py YOUR_API_TOKEN YOUR_PRIVATE_KEY VIDTOKEN1,VIDTOKEN2 EXPIRATION\n" # Expiration days are integer
+	print("Error\n")
+	print("Usage: $>python video_expiration_days_bulk.py YOUR_API_TOKEN YOUR_PRIVATE_KEY VIDTOKEN1,VIDTOKEN2 EXPIRATION\n") # Expiration days are integer
 	sys.exit()
 
 api_token = sys.argv[1]
@@ -16,4 +17,4 @@ ziggeo = Ziggeo(api_token, private_key)
 arguments={}
 arguments['tokens_or_keys'] = video_token
 arguments["expiration_days"] = expiration_days
-print ziggeo.videos().update_bulk(arguments)
+print(ziggeo.videos().update_bulk(arguments))

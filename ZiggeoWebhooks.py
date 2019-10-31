@@ -1,4 +1,5 @@
-class ZiggeoWebhooks:
+from builtins import object
+class ZiggeoWebhooks(object):
 
     def __init__(self, application):
         self.__application = application

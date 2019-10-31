@@ -1,3 +1,6 @@
+from __future__ import print_function
+from __future__ import division
+from past.utils import old_div
 import sys
 
 from Ziggeo import Ziggeo
@@ -25,4 +28,4 @@ def indexVideos(skip=0):
 	pass
 indexVideos(0)
 
-print("Total Duration = {:.2f} seconds, Average Duration {:.2f} seconds.".format(total_duration, ( total_duration /count_duration )))
+print("Total Duration = {:.2f} seconds, Average Duration {:.2f} seconds.".format(total_duration, ( old_div(total_duration,count_duration) )))

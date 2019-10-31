@@ -1,5 +1,6 @@
 
-class ZiggeoConfig:
+from builtins import object
+class ZiggeoConfig(object):
     def __init__(self):
         self.server_api_url = "https://srvapi.ziggeo.com"
 

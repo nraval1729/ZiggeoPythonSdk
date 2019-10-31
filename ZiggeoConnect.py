@@ -14,7 +14,7 @@ except ImportError:
     #For Python 2's urllib2
     import urllib.request, urllib.error, urllib.parse, urllib.request, urllib.parse, urllib.error
 
-from .MultiPartForm import MultiPartForm
+from MultiPartForm import MultiPartForm
 
 
 class ZiggeoConnect(object):

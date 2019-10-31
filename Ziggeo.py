@@ -1,18 +1,18 @@
 from __future__ import absolute_import
 from builtins import object
-from .ZiggeoConfig import ZiggeoConfig
-from .ZiggeoConnect import ZiggeoConnect
-from .ZiggeoAuth import ZiggeoAuth
-from .ZiggeoVideos import ZiggeoVideos
-from .ZiggeoStreams import ZiggeoStreams
-from .ZiggeoAuthtokens import ZiggeoAuthtokens
-from .ZiggeoApplication import ZiggeoApplication
-from .ZiggeoEffectProfiles import ZiggeoEffectProfiles
-from .ZiggeoEffectProfileProcess import ZiggeoEffectProfileProcess
-from .ZiggeoMetaProfiles import ZiggeoMetaProfiles
-from .ZiggeoMetaProfileProcess import ZiggeoMetaProfileProcess
-from .ZiggeoWebhooks import ZiggeoWebhooks
-from .ZiggeoAnalytics import ZiggeoAnalytics
+from ZiggeoConfig import ZiggeoConfig
+from ZiggeoConnect import ZiggeoConnect
+from ZiggeoAuth import ZiggeoAuth
+from ZiggeoVideos import ZiggeoVideos
+from ZiggeoStreams import ZiggeoStreams
+from ZiggeoAuthtokens import ZiggeoAuthtokens
+from ZiggeoApplication import ZiggeoApplication
+from ZiggeoEffectProfiles import ZiggeoEffectProfiles
+from ZiggeoEffectProfileProcess import ZiggeoEffectProfileProcess
+from ZiggeoMetaProfiles import ZiggeoMetaProfiles
+from ZiggeoMetaProfileProcess import ZiggeoMetaProfileProcess
+from ZiggeoWebhooks import ZiggeoWebhooks
+from ZiggeoAnalytics import ZiggeoAnalytics
 
 class Ziggeo(object):
 
